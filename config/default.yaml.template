@@ -1,0 +1,10 @@
+discord:
+  api:
+    appId: "1234567890"
+    token: sampleAPIkey1234567890
+  guildId: "9876543210"
+db:
+  host: "some.mongodb.host"
+  database: "lalabot"
+  user: "lalabot"
+  password: "password123"

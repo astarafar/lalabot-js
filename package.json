@@ -1,0 +1,35 @@
+{
+  "name": "lalabot",
+  "author": {
+    "name": "Justin Coffman",
+    "email": "jcoffman@sekyurra.com"
+  },
+  "license": "AGPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sekyurra/lalabot.git"
+  },
+  "scripts": {
+    "start": "node index.cjs",
+    "deploy": "node deploy.cjs"
+  },
+  "packageManager": "yarn@3.2.3",
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "@discordjs/rest": "^1.2.0",
+    "colors": "^1.4.0",
+    "config": "^3.3.8",
+    "discord.js": "^14.5.0",
+    "js-yaml": "^4.1.0",
+    "mongodb": "^4.10.0"
+  },
+  "bugs": {
+    "url": "https://github.com/sekyurra/lalabot/issues"
+  },
+  "homepage": "https://github.com/sekyurra/lalabot#readme",
+  "version": "1.0.0",
+  "description": "A Discord bot to help Final Fantasy XIV Free Companies manage various activities.",
+  "main": "index.js"
+}
