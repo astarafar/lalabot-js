@@ -23,8 +23,8 @@ const rest = new REST({ version: "10" }).setToken(
 rest
   .put(
     Routes.applicationGuildCommands(
-      config.get("discord.api.app_id"),
-      config.get("discord.guild_id")
+      config.get("discord.api.appId"),
+      config.get("discord.guildId")
     ),
     { body: commands }
   )

@@ -1,6 +1,7 @@
+const msg = require("../utils/msg.cjs");
 const { InteractionType } = require("discord.js");
 
-command_routes = {
+const commandRoutes = {
   ApplicationCommand: handleApplicationCommand,
 };
 
@@ -10,7 +11,7 @@ async function handleApplicationCommand(interaction) {
   if (!command) {
     user = interaction.member.user;
     console.log(
-      msg.fail(
+      msg.warning(
         `${user.username}#${user.discriminator} (#${user.id}) issued command [${interaction.commandName}], which is deployed but has no registered handler.`
       )
     );
@@ -24,7 +25,7 @@ async function handleApplicationCommand(interaction) {
   try {
     await command.execute(interaction);
   } catch (error) {
-    console.error(msg.fail(error));
+    console.error(msg.error(error));
     await interaction.reply({
       content: "There was an error while executing this command!",
       ephemeral: true,
@@ -34,6 +35,6 @@ async function handleApplicationCommand(interaction) {
 
 module.exports = {
   async handleCommand(interaction) {
-    await command_routes[InteractionType[interaction.type]](interaction);
+    await commandRoutes[InteractionType[interaction.type]](interaction);
   },
 };

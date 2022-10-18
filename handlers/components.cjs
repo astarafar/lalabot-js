@@ -4,9 +4,10 @@ componentRoutes = {
   Button: handleButton,
 };
 
-button_routes = {
+buttonRoutes = {
+  event: async (interaction) => {},
   ping: async (interaction) => {
-    await interaction.reply({
+    interaction.reply({
       content: `You pressed the \`${interaction.customId}\` button!`,
       ephemeral: true,
     });
@@ -14,13 +15,11 @@ button_routes = {
 };
 
 async function handleButton(interaction) {
-  await button_routes[interaction.customId](interaction);
+  buttonRoutes[interaction.customId.split(":")[0]](interaction);
 }
 
 module.exports = {
   async handleComponent(interaction) {
-    await componentRoutes[ComponentType[interaction.componentType]](
-      interaction
-    );
+    componentRoutes[ComponentType[interaction.componentType]](interaction);
   },
 };

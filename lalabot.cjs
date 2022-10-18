@@ -35,7 +35,7 @@ for (const file of eventFiles) {
 
 client.login(config.get("discord.api.token")).catch((err) => {
   console.log(
-    msg.fail(` The bot encountered an error while starting.
+    msg.emerg(` The bot encountered an error while starting.
 
 ${err}`)
   );

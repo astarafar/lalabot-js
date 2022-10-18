@@ -10,7 +10,7 @@
     "url": "git+https://github.com/sekyurra/lalabot.git"
   },
   "scripts": {
-    "start": "node index.cjs",
+    "start": "node lalabot.cjs",
     "deploy": "node deploy.cjs"
   },
   "packageManager": "yarn@3.2.3",
@@ -23,7 +23,8 @@
     "config": "^3.3.8",
     "discord.js": "^14.5.0",
     "js-yaml": "^4.1.0",
-    "mongodb": "^4.10.0"
+    "mongodb": "^4.10.0",
+    "uuid": "^9.0.0"
   },
   "bugs": {
     "url": "https://github.com/sekyurra/lalabot/issues"
@@ -31,5 +32,5 @@
   "homepage": "https://github.com/sekyurra/lalabot#readme",
   "version": "1.0.0",
   "description": "A Discord bot to help Final Fantasy XIV Free Companies manage various activities.",
-  "main": "index.js"
+  "main": "lalabot.cjs"
 }
