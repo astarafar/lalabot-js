@@ -1,10 +1,12 @@
 const { InteractionType } = require("discord.js");
-const { handleCommand } = require("../handlers/commands.cjs");
+const { handleApplicationCommand } = require("../handlers/commands.cjs");
 const { handleComponent } = require("../handlers/components.cjs");
+const { handleAutocomplete } = require("../handlers/autocomplete.cjs");
 
 const interactionRoutes = {
-  ApplicationCommand: handleCommand,
+  ApplicationCommand: handleApplicationCommand,
   MessageComponent: handleComponent,
+  ApplicationCommandAutocomplete: handleAutocomplete,
 };
 
 module.exports = {

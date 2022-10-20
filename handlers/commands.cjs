@@ -34,7 +34,7 @@ async function handleApplicationCommand(interaction) {
 }
 
 module.exports = {
-  async handleCommand(interaction) {
+  async handleApplicationCommand(interaction) {
     await commandRoutes[InteractionType[interaction.type]](interaction);
   },
 };
