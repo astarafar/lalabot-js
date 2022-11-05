@@ -6,9 +6,9 @@ componentRoutes = {
 
 buttonRoutes = {
   event: async (interaction) => {},
-  ping: async (interaction) => {
+  testbutton: async (interaction) => {
     interaction.reply({
-      content: `You pressed the \`${interaction.customId}\` button!`,
+      content: `You pressed the \`${interaction.customId}\` button! As before, only you can see this.`,
       ephemeral: true,
     });
   },

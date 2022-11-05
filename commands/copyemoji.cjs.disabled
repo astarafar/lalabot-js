@@ -1,0 +1,37 @@
+const msg = require("../utils/msg.cjs");
+
+const { SlashCommandBuilder } = require("discord.js");
+
+module.exports = {
+  data: new SlashCommandBuilder()
+    .setName("copyemoji")
+    .setDescription("Copies the specified emoji to this server.")
+    .addStringOption((option) =>
+      option
+        .setName("emoji")
+        .setDescription("The emoji to copy.")
+        .setRequired(true)
+    ),
+  async execute(interaction) {
+    let matches = interaction.options
+      .getString("emoji")
+      .match(/<:(\w+):(\d+)>/);
+
+    let emName = matches[1];
+    let emId = matches[2];
+
+    console.log(emName);
+    console.log(emId);
+
+    console.log(interaction.guild.emojis.resolve(emId));
+
+    // interaction.guild.emojis.create(
+    //   `https://cdn.discordapp.com/emojis/${emoji.id}.`
+    // );
+
+    return interaction.reply({
+      content: "Done.",
+      ephemeral: true,
+    });
+  },
+};

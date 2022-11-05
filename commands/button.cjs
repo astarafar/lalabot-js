@@ -12,13 +12,13 @@ module.exports = {
   async execute(interaction) {
     const row = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
-        .setCustomId("ping")
-        .setLabel("Ping!")
+        .setCustomId("testbutton")
+        .setLabel("Press me!")
         .setStyle(ButtonStyle.Primary)
     );
 
     await interaction.reply({
-      content: "Here's a test button for you.",
+      content: "Here's a test button for you. Only you can see this!",
       components: [row],
       ephemeral: true,
     });

@@ -11,7 +11,7 @@ const client = new MongoClient(uri, {
   useUnifiedTopology: true,
 });
 
-db = client.db(config.get("db.database"));
+let db = client.db(config.get("db.database"));
 
 module.exports = {
   createEvent: (
